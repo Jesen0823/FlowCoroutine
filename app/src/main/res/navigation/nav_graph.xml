@@ -9,14 +9,23 @@
         android:id="@+id/homeFragment"
         android:name="com.jesen.flowcoroutine.fragment.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_downloadFragment"
             app:destination="@id/downloadFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_roomFragment"
+            app:destination="@id/roomFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/downloadFragment"
         android:name="com.jesen.flowcoroutine.fragment.DownloadFragment"
         android:label="fragment_download"
         tools:layout="@layout/fragment_download" />
+    <fragment
+        android:id="@+id/roomFragment"
+        android:name="com.jesen.flowcoroutine.fragment.RoomFragment"
+        android:label="fragment_room"
+        tools:layout="@layout/fragment_room" />
 </navigation>
