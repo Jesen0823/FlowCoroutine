@@ -19,7 +19,7 @@ object DownloadManager {
             val response = OkHttpClient.Builder().build().newCall(request).execute()
             if (response.isSuccessful) {
                 //body如果为null，继续执行，故意抛出异常
-                response.body()!!.let { body ->
+                response.body!!.let { body ->
                     val total = body.contentLength()
                     file.outputStream().use { output ->
                         val input = body.byteStream()
