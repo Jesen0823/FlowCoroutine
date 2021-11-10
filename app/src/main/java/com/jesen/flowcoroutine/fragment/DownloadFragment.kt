@@ -25,7 +25,7 @@ import java.io.File
  */
 class DownloadFragment : Fragment() {
 
-    private val URL = "https://t1.huishahe.com/uploads/tu/bj/tp/1225/1.jpg"
+    private val URL = "https://up.enterdesk.com/edpic_source/1f/a4/d7/1fa4d7459732880919057236b2407e0e.jpg"
 
     companion object {
         private const val TAG = "DownloadFragment"
@@ -42,13 +42,12 @@ class DownloadFragment : Fragment() {
         return mBinding.root
     }
 
-    @InternalCoroutinesApi
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         lifecycleScope.launchWhenCreated {
             context?.apply {
-                val file = File(getExternalFilesDir(null)?.path, "pic.jgp")
+                val file = File(getExternalFilesDir(null)?.path, "down.jpg")
                 Log.d(TAG, "onViewCreated: " + file.absolutePath)
                 DownloadManager.download(URL, file).collect { status ->
                     when (status) {
