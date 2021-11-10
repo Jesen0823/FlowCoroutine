@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".fragment.HomeFragment">
+
+    <Button
+        android:id="@+id/btn_flow_and_download"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Flow and Download"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <Button
+        android:id="@+id/btn_flow_and_room"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Flow and Room"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_flow_and_download"/>
+
+    <Button
+        android:id="@+id/btn_flow_and_retrofit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Flow and retrofit"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_flow_and_room"/>
+
+    <Button
+        android:id="@+id/btn_state_flow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="state flow"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_flow_and_retrofit"/>
+
+    <Button
+        android:id="@+id/btn_shared_flow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="shared flow"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_state_flow"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
