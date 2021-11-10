@@ -39,6 +39,10 @@ class HomeFragment : Fragment() {
         mBinding.btnFlowAndRoom.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_roomFragment)
         }
+
+        mBinding.btnFlowAndRetrofit.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_retrofitFragment)
+        }
     }
 
 }
