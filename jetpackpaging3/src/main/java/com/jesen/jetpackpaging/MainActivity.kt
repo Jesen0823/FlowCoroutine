@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.paging.LoadState
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.jesen.jetpackpaging.databinding.ActivityMainBinding
 import com.jesen.jetpackpaging.paging.ExamPagingAdapter
@@ -32,11 +33,21 @@ class MainActivity : AppCompatActivity() {
                 this@MainActivity,
                 DividerItemDecoration.VERTICAL,
             ))
+            swipeRefreshLayout.setOnRefreshListener {
+                adapter.refresh()
+            }
         }
 
         lifecycleScope.launchWhenCreated {
             viewModel.loadExam().collectLatest {
                 adapter.submitData(it)
+            }
+        }
+
+        // 监听加载状态
+        lifecycleScope.launchWhenCreated {
+            adapter.loadStateFlow.collectLatest { state ->
+               mBinding.swipeRefreshLayout.isRefreshing = state.refresh is LoadState.Loading
             }
         }
     }

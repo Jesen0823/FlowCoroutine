@@ -15,6 +15,7 @@ class ExamViewModel : ViewModel() {
             config = PagingConfig(
                 pageSize = 5,
                 initialLoadSize = 10, // 第一次加载数量，如果不设置的话是 pageSize * 3
+                prefetchDistance = 2,
             ),
             pagingSourceFactory = { ExamPagingSource() }
         ).flow
