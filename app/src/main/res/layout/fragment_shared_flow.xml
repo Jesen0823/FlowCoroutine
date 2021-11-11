@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.SharedFlowFragment">
+
+    <fragment
+        android:id="@+id/fragOne"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_gravity="top"
+        android:name="com.jesen.flowcoroutine.sharedflow.TextFragment" />
+    <fragment
+        android:id="@+id/fragTwo"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="220dp"
+        android:name="com.jesen.flowcoroutine.sharedflow.TextFragment" />
+    <fragment
+        android:id="@+id/fragThree"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="440dp"
+        android:name="com.jesen.flowcoroutine.sharedflow.TextFragment" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:layout_marginBottom="10dp"
+        android:src="@android:drawable/ic_media_play"/>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnStop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="10dp"
+        android:src="@android:drawable/ic_media_pause"/>
+
+</FrameLayout>

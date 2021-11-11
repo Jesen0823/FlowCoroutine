@@ -5,7 +5,9 @@
       <map>
         <entry key="..\:/Android/AndroidStudioProjects2021/FlowCoroutine/app/src/main/res/layout/fragment_retrofit.xml" value="0.18541666666666667" />
         <entry key="..\:/Android/AndroidStudioProjects2021/FlowCoroutine/app/src/main/res/layout/fragment_room.xml" value="0.1" />
+        <entry key="..\:/Android/AndroidStudioProjects2021/FlowCoroutine/app/src/main/res/layout/fragment_shared_flow.xml" value="0.15677083333333333" />
         <entry key="..\:/Android/AndroidStudioProjects2021/FlowCoroutine/app/src/main/res/layout/fragment_stateflow.xml" value="0.284375" />
+        <entry key="..\:/Android/AndroidStudioProjects2021/FlowCoroutine/app/src/main/res/layout/fragment_text.xml" value="0.15677083333333333" />
         <entry key="..\:/Android/AndroidStudioProjects2021/FlowCoroutine/app/src/main/res/layout/retrofit_item.xml" value="0.18541666666666667" />
         <entry key="..\:/Android/AndroidStudioProjects2021/FlowCoroutine/app/src/main/res/layout/room_data_item.xml" value="0.2734375" />
       </map>

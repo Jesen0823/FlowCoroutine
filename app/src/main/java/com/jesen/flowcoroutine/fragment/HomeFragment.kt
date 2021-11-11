@@ -47,5 +47,9 @@ class HomeFragment : Fragment() {
         mBinding.btnStateFlow.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_stateflowFragment)
         }
+
+        mBinding.btnSharedFlow.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_sharedFlowFragment)
+        }
     }
 }
