@@ -9,3 +9,4 @@ dependencyResolutionManagement {
 rootProject.name = "FlowCoroutine"
 include ':app'
 include ':jetpackpaging3'
+include ':pagingbookstore'
