@@ -43,6 +43,9 @@ class HomeFragment : Fragment() {
         mBinding.btnFlowAndRetrofit.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_retrofitFragment)
         }
-    }
 
+        mBinding.btnStateFlow.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_stateflowFragment)
+        }
+    }
 }

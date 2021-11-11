@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_homeFragment_to_retrofitFragment"
             app:destination="@id/retrofitFragment"/>
+        <action
+            android:id="@+id/action_homeFragment_to_stateflowFragment"
+            app:destination="@id/stateflowFragment" />
     </fragment>
 
     <fragment
@@ -36,4 +39,9 @@
         android:name="com.jesen.flowcoroutine.fragment.RetrofitFragment"
         android:label="retrofit_fragment"
         tools:layout="@layout/fragment_retrofit"/>
+    <fragment
+        android:id="@+id/stateflowFragment"
+        android:name="com.jesen.flowcoroutine.fragment.StateflowFragment"
+        android:label="fragment_stateflow"
+        tools:layout="@layout/fragment_stateflow" />
 </navigation>
