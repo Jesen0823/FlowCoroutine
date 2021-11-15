@@ -16,7 +16,7 @@ class ExamPagingSource : PagingSource<Int, Question>() {
             .getQuestionList(currentPage, pageSize)
 
         val responseList = mutableListOf<Question>()
-        val data = response?.result?.resultData?.QuestionList ?: emptyList<Question>()
+        val data = response.result?.resultData?.QuestionList ?: emptyList<Question>()
         responseList.addAll(data)
 
         // 加载分页

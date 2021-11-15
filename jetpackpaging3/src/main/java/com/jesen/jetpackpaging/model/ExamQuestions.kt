@@ -37,12 +37,12 @@ data class ResultInfo(
 
 data class Question(
     val answer: String,
-    val chapter: String,
+    val chapter: String?,
     val explain: String,    // 解析
-    val option1: String,    // 选项A
-    val option2: String,    // 选项B
-    val option3: String,    // 选项C
-    val option4: String,    // 选项D
+    val option1: String?,    // 选项A
+    val option2: String?,    // 选项B
+    val option3: String?,    // 选项C
+    val option4: String?,    // 选项D
     val question: String,   // 答案
     val type: String
 )
