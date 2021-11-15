@@ -14,5 +14,5 @@ flow and Coroutine
 | app                                                          | jetpackpaging3                                               | pagingbookstore                                              |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | <img src="./doc/11-16_003838.jpg" alt="有道翻译实时检索" style="zoom:80%;" /> | <img src="./doc/11-16_003941.jpg" alt="驾照题库小案例" style="zoom:80%;" /> | <img src="./doc/11-16_004011.jpg" alt="视频列表" style="zoom:80%;" /> |
-| SharedFlow， Retrofit2，Room, StateFlow，navigation，coroutines，viewBinding | coroutines，swiperefreshlayout，retrofit2，ViewModel，paging3，flow，Livedata，viewBinding，dataBinding | coroutines，swiperefreshlayout，room，retrofit2，flow，Livedata，ViewModel，Hilt，viewBinding，dataBinding |
+| SharedFlow， Retrofit2，Room, StateFlow，navigation，coroutines，viewBinding                                              | coroutines，swiperefreshlayout，retrofit2，ViewModel，paging3，flow，Livedata，viewBinding，dataBinding | coroutines，swiperefreshlayout，room，retrofit2，flow，Livedata，ViewModel，Hilt，viewBinding，dataBinding |
 
