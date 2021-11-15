@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="videoItem"
+            type="com.jesen.pagingbookstore.model.VideoItem" />
+    </data>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="5dp"
+        app:cardUseCompatPadding="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/coverImg"
+                android:layout_width="640dp"
+                android:layout_height="360dp"
+                android:paddingHorizontal="5dp"
+                android:layout_marginTop="5dp"
+                app:bindingAvatar="@{videoItem.videoInfo.cover.feed}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tool:src="@drawable/ic_launcher_background"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="@id/titleTv"
+                android:background="@drawable/item_shader"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tagTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_margin="16dp"
+                android:backgroundTint="@color/white"
+                android:text="@{videoItem.videoInfo.category}"
+                android:textColor="@color/gray_600"
+                android:textSize="14sp"
+                tool:text="hhh"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/viTypeTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="@{videoItem.videoInfo.description}"
+                android:layout_marginStart="8dp"
+                android:layout_marginVertical="10dp"
+                android:maxLines="3"
+                android:ellipsize="end"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp"
+                tool:text="抗日神剧"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/titleTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/viTypeTv"
+                android:text="@{videoItem.videoInfo.title}"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="8dp"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:maxLines="1"
+                tool:text="胡天八月即飞雪"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</layout>

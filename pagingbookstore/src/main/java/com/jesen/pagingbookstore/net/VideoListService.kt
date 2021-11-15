@@ -8,7 +8,7 @@ interface VideoListService {
 
     @GET("api/v4/discovery/hot")
     suspend fun getVideoList(
-        @Query("start") pageIndex:Int,
-        @Query("num") pageSize:Int
+        @Query("start") itemStart:Int = 1,
+        @Query("num") pageSize:Int =  6
     ):VideoStore
 }
