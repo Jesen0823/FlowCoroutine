@@ -1,6 +1,7 @@
 package com.jesen.pagingbookstore.net
 
 import android.util.Log
+import android.widget.Toast
 import androidx.paging.ExperimentalPagingApi
 import androidx.paging.LoadType
 import androidx.paging.PagingState
@@ -8,9 +9,11 @@ import androidx.paging.RemoteMediator
 import androidx.room.PrimaryKey
 import androidx.room.withTransaction
 import com.google.gson.annotations.SerializedName
+import com.jesen.pagingbookstore.binding.isConnectedNet
 import com.jesen.pagingbookstore.binding.parseNextPageStart
 import com.jesen.pagingbookstore.db.AppDatabase
 import com.jesen.pagingbookstore.db.VideoEntity
+import com.jesen.pagingbookstore.init.AppHelper
 import com.jesen.pagingbookstore.model.VideoItem
 
 @ExperimentalPagingApi
@@ -51,6 +54,12 @@ class VideoRemoteMediator(
                     Log.d(TAG, "===load,lastItem.page: ${lastItem.page}")
                     lastItem.page
                 }
+            }
+
+            // 如果网络异常，加载本地数据
+            if(!AppHelper.mContext.isConnectedNet()){
+                Toast.makeText(AppHelper.mContext,"网络异常！加载本地数据",Toast.LENGTH_SHORT).show()
+                return MediatorResult.Success(endOfPaginationReached = true)
             }
 
             //第二步，请求网络分页数据
