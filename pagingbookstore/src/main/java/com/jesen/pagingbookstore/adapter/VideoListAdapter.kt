@@ -8,14 +8,14 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
-import com.jesen.pagingbookstore.databinding.ItemLayoutBinding
+import com.jesen.pagingbookstore.databinding.VideoItemLayoutBinding
 import com.jesen.pagingbookstore.model.VideoItem
 
 class VideoListAdapter(private val context: Context) :
     PagingDataAdapter<VideoItem, BindingViewHolder>(DiffUtilCallback()) {
     override fun onBindViewHolder(holder: BindingViewHolder, position: Int) {
         getItem(position).let { item ->
-            val binding = holder.binding as ItemLayoutBinding
+            val binding = holder.binding as VideoItemLayoutBinding
             // 将VideoItem设置给布局
             Log.d("adapter===","VideoItem id: ${item?.id}, cur postion:$position")
             binding.videoItem = item
@@ -23,7 +23,8 @@ class VideoListAdapter(private val context: Context) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BindingViewHolder {
-        val binding = ItemLayoutBinding.inflate(LayoutInflater.from(context), parent, false)
+        
+        val binding = VideoItemLayoutBinding.inflate(LayoutInflater.from(context), parent, false)
         return BindingViewHolder(binding)
     }
 }
