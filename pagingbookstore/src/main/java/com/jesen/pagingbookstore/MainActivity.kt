@@ -3,11 +3,14 @@ package com.jesen.pagingbookstore
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.lifecycle.lifecycleScope
+import androidx.paging.LoadState
 import com.jesen.pagingbookstore.adapter.FooterAdapter
 import com.jesen.pagingbookstore.adapter.VideoListAdapter
 import com.jesen.pagingbookstore.databinding.ActivityMainBinding
 import com.jesen.pagingbookstore.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collectLatest
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -21,9 +24,17 @@ class MainActivity : AppCompatActivity() {
 
         viewModel.data.observe(this, {
             mAdapter.submitData(lifecycle, it)
+            mBinding.swipeRefresh.isEnabled = false
         })
 
-        // 下拉加载更多 withLoadStateFooter
+        // 上拉加载更多动效 withLoadStateFooter
         mBinding.recyclerView.adapter = mAdapter.withLoadStateFooter(FooterAdapter(mAdapter,this))
+
+        // 下拉刷新动效
+        lifecycleScope.launchWhenCreated {
+            mAdapter.loadStateFlow.collectLatest { state->
+                mBinding.swipeRefresh.isRefreshing = state.refresh is LoadState.Loading
+            }
+        }
     }
 }
