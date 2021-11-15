@@ -3,6 +3,7 @@ package com.jesen.pagingbookstore
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import com.jesen.pagingbookstore.adapter.FooterAdapter
 import com.jesen.pagingbookstore.adapter.VideoListAdapter
 import com.jesen.pagingbookstore.databinding.ActivityMainBinding
 import com.jesen.pagingbookstore.viewmodel.MainViewModel
@@ -22,6 +23,7 @@ class MainActivity : AppCompatActivity() {
             mAdapter.submitData(lifecycle, it)
         })
 
-        mBinding.recyclerView.adapter = mAdapter
+        // 下拉加载更多 withLoadStateFooter
+        mBinding.recyclerView.adapter = mAdapter.withLoadStateFooter(FooterAdapter(mAdapter,this))
     }
 }
