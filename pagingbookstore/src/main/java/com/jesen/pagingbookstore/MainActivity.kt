@@ -24,13 +24,16 @@ class MainActivity : AppCompatActivity() {
 
         viewModel.data.observe(this, {
             mAdapter.submitData(lifecycle, it)
-            mBinding.swipeRefresh.isEnabled = false
+            mBinding.swipeRefresh.isEnabled = true
         })
 
         // 上拉加载更多动效 withLoadStateFooter
         mBinding.recyclerView.adapter = mAdapter.withLoadStateFooter(FooterAdapter(mAdapter,this))
 
         // 下拉刷新动效
+        mBinding.swipeRefresh.setOnRefreshListener {
+            mAdapter.refresh()
+        }
         lifecycleScope.launchWhenCreated {
             mAdapter.loadStateFlow.collectLatest { state->
                 mBinding.swipeRefresh.isRefreshing = state.refresh is LoadState.Loading
