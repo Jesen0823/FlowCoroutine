@@ -22,10 +22,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(mBinding.root)
 
-        viewModel.data.observe(this, {
+        viewModel.data.observe(this) {
             mAdapter.submitData(lifecycle, it)
             mBinding.swipeRefresh.isEnabled = true
-        })
+        }
 
         // 上拉加载更多动效 withLoadStateFooter
         mBinding.recyclerView.adapter = mAdapter.withLoadStateFooter(FooterAdapter(mAdapter,this))

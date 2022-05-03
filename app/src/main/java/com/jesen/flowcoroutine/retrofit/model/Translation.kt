@@ -1,4 +1,4 @@
-package com.jesen.flowcoroutine.retrofit.model
+ package com.jesen.flowcoroutine.retrofit.model
 
 data class Translation(
     val `data`: Data,

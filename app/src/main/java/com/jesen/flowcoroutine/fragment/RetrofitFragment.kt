@@ -63,9 +63,9 @@ class RetrofitFragment : Fragment() {
                 )
             )
 
-            viewModel.translation.observe(viewLifecycleOwner, { transResult ->
+            viewModel.translation.observe(viewLifecycleOwner) { transResult ->
                 adapter.setData(transResult.data.entries)
-            })
+            }
         }
     }
 

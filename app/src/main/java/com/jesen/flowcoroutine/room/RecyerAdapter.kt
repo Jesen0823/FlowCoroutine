@@ -19,7 +19,6 @@ class RecyerAdapter(private val context: Context): RecyclerView.Adapter<RecyerAd
         notifyDataSetChanged()
     }
 
-
     class MyViewHolder(val bindingView:ViewBinding): RecyclerView.ViewHolder(bindingView.root) {
     }
 

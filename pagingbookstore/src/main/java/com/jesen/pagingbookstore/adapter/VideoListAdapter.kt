@@ -13,6 +13,7 @@ import com.jesen.pagingbookstore.model.VideoItem
 
 class VideoListAdapter(private val context: Context) :
     PagingDataAdapter<VideoItem, BindingViewHolder>(DiffUtilCallback()) {
+
     override fun onBindViewHolder(holder: BindingViewHolder, position: Int) {
         getItem(position).let { item ->
             val binding = holder.binding as VideoItemLayoutBinding

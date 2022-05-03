@@ -21,7 +21,8 @@ object RetrofitClient {
 
         val okhttpClient = OkHttpClient.Builder().addInterceptor(logInterceptor)
             .connectTimeout(5, TimeUnit.SECONDS)//设置超时时间
-            .retryOnConnectionFailure(true).build()
+            .retryOnConnectionFailure(true)
+            .build()
 
         Retrofit.Builder()
             .client(okhttpClient)
@@ -34,3 +35,5 @@ object RetrofitClient {
         instance.create(TranslationApi::class.java)
     }
 }
+
+

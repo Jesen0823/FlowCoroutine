@@ -12,3 +12,4 @@ interface VideoListService {
         @Query("num") pageSize:Int =  6
     ):VideoStore
 }
+

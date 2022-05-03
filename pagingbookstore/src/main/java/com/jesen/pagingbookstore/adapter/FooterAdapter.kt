@@ -35,7 +35,7 @@ class FooterAdapter(
 
 class FooterStateItemViewHolder(
     private val binding: FooterLoadStateLayoutBinding,
-    val retryCallback: () -> Unit
+    private val retryCallback: () -> Unit
 ) : RecyclerView.ViewHolder(binding.root) {
 
     // 根据加载状态处理UI
